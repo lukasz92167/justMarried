@@ -49,11 +49,25 @@ a:visited {
             transform: translateY(15px);
   }
 }
+.section {
+  position: relative;
+}
 .section__content {
-  padding: 40px 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 40px 10px;
 }
 .section__header {
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,10 +94,10 @@ a:visited {
   font-style: italic;
 }
 .section__header .underline {
-  height: 3px;
-  width: 65px;
+  height: 1px;
+  width: 105px;
   background-color: rgb(243, 197, 243);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-radius: 15px;
 }
 
@@ -121,6 +135,9 @@ nav .nav-link {
   z-index: 1;
 }
 nav .nav-link:hover {
+  color: #f7cdd0;
+}
+nav .nav-link:focus {
   color: #f7cdd0;
 }
 nav .brand {
@@ -195,11 +212,12 @@ nav .fa-bars {
 .aboutme {
   position: relative;
   background-image: url(../img/wedding-5156639_1920_about.jpg);
-  background: size 110%;
+  background-size: 110%;
   background-attachment: fixed;
   background-position: center;
+  color: white;
+  text-shadow: 0 0 2px black;
   z-index: 0;
-  font-size: 1em;
 }
 .aboutme__shadow-bg {
   position: absolute;
@@ -207,10 +225,6 @@ nav .fa-bars {
   width: 100%;
   background-color: rgba(15, 31, 17, 0.712);
   z-index: -1;
-}
-.aboutme__content {
-  color: white;
-  text-shadow: 0 0 2px black;
 }
 .aboutme__text {
   display: -webkit-box;
@@ -228,10 +242,6 @@ nav .fa-bars {
 }
 .aboutme__photo {
   margin-bottom: 30px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -244,24 +254,94 @@ nav .fa-bars {
   max-width: 555px;
   border-radius: 10px;
 }
-.aboutme__card {
-  padding: 10px 10px;
+.aboutme__textParagraph {
+  padding: 10px 25px;
   margin-bottom: 20px;
   font-size: 0.7em;
 }
-.aboutme__card h2 {
+.aboutme__textParagraph h2 {
   font-size: 1.8em;
   margin-bottom: 10px;
   text-align: center;
   font-weight: bold;
 }
-.aboutme__card p {
+.aboutme__textParagraph p {
   font-size: 1.2em;
   text-align: center;
   padding: 0;
 }
-.aboutme__text .aboutme__card:last-child {
+.aboutme__text .aboutme__textParagraph:last-child {
   margin-bottom: 0;
+}
+
+.offer {
+  height: 100vh;
+  background-image: url(../img/stone-2929205_1280.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+.offer__shadow-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(144, 138, 148, 0.089);
+  z-index: -1;
+}
+.offer__description {
+  height: 500px;
+  background-image: url(../img/beach-1094040_1280.jpg);
+  background-size: 130%;
+  background-attachment: fixed;
+  background-position: left 0% top 100%;
+  background-repeat: no-repeat;
+}
+.offer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.offer .card-img-top {
+  -webkit-transition: 0.3s -webkit-transform;
+  transition: 0.3s -webkit-transform;
+  transition: 0.3s transform;
+  transition: 0.3s transform, 0.3s -webkit-transform;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+.offer .card {
+  -webkit-box-shadow: -2px 2px 7px 0px rgba(26, 26, 26, 0.671);
+          box-shadow: -2px 2px 7px 0px rgba(26, 26, 26, 0.671);
+  overflow: hidden;
+}
+.offer .card:hover > .card-img-top {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+.offer__btn {
+  margin-top: 30px;
+  width: 250px;
+  display: block;
+  border: none;
+  text-align: center;
+  border-radius: 25px;
+  text-transform: uppercase;
+  color: #000000;
+  -webkit-transition: 0.3s color;
+  transition: 0.3s color;
+}
+.offer__btn:hover {
+  cursor: pointer;
+  color: rgb(243, 197, 243);
 }
 
 footer {
@@ -278,23 +358,6 @@ footer {
   width: 100%;
   background-color: #ece6e6;
   text-align: center;
-}
-
-.offer__btn {
-  margin-top: 30px;
-  width: 250px;
-  display: block;
-  border: none;
-  text-align: center;
-  border-radius: 25px;
-  text-transform: uppercase;
-  color: #000000;
-  -webkit-transition: 0.3s color;
-  transition: 0.3s color;
-}
-.offer__btn:hover {
-  cursor: pointer;
-  color: rgb(243, 197, 243);
 }
 
 @media (min-width: 405px) {
@@ -324,13 +387,12 @@ footer {
 
   .aboutme {
     background: size 130%;
-    background-attachment: fixed;
     background-position: 10% 60%;
     z-index: 0;
   }
 }
 @media (min-width: 1200px) {
-  .aboutme__card {
+  .aboutme__textParagraph {
     font-size: 0.8em;
   }
 }/*# sourceMappingURL=main.css.map */

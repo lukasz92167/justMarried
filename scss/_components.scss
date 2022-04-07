@@ -26,17 +26,23 @@
 }
 
 .section {
+  position: relative;
+
   &__content {
-    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 40px 10px;
   }
 
   &__header {
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
 
     h1 {
@@ -53,10 +59,10 @@
     }
 
     .underline {
-      height: 3px;
-      width: 65px;
+      height: 1px;
+      width: 105px;
       background-color: rgb(243, 197, 243);
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       border-radius: 15px;
     }
   }
