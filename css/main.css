@@ -212,9 +212,10 @@ nav .fa-bars {
 .aboutme {
   position: relative;
   background-image: url(../img/wedding-5156639_1920_about.jpg);
-  background-size: 110%;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   color: white;
   text-shadow: 0 0 2px black;
   z-index: 0;
@@ -286,7 +287,7 @@ nav .fa-bars {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(203, 182, 201, 0.21);
+  background-color: rgba(203, 182, 201, 0.452);
   z-index: -1;
 }
 .offer__description {
@@ -389,7 +390,6 @@ footer {
   }
 
   .aboutme {
-    background: size 130%;
     background-position: 10% 60%;
     z-index: 0;
   }
