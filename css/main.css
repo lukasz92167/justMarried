@@ -67,7 +67,7 @@ a:visited {
 }
 .section__header {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,7 +97,7 @@ a:visited {
   height: 1px;
   width: 105px;
   background-color: rgb(243, 197, 243);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-radius: 15px;
 }
 
@@ -286,7 +286,7 @@ nav .fa-bars {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(144, 138, 148, 0.089);
+  background-color: rgba(203, 182, 201, 0.21);
   z-index: -1;
 }
 .offer__description {
@@ -329,19 +329,22 @@ nav .fa-bars {
 }
 .offer__btn {
   margin-top: 30px;
+  padding: 5px;
   width: 250px;
   display: block;
   border: none;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 5px;
   text-transform: uppercase;
-  color: #000000;
-  -webkit-transition: 0.3s color;
-  transition: 0.3s color;
+  color: white;
+  -webkit-transition: 0.3s color, 0.3s background-color;
+  transition: 0.3s color, 0.3s background-color;
+  background-color: #bb3864;
 }
 .offer__btn:hover {
   cursor: pointer;
-  color: rgb(243, 197, 243);
+  color: rgb(7, 7, 7);
+  background-color: #f3acc4;
 }
 
 footer {
@@ -376,7 +379,7 @@ footer {
   }
 }
 @media (min-width: 576px) {
-  .aboutme {
+  .section {
     font-size: 1.1em;
   }
 }
