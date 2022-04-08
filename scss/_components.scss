@@ -27,13 +27,16 @@
 
 .section {
   position: relative;
+  min-height: 50vh;
+  color: white;
+  // letter-spacing: 1px;
 
   &__content {
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 40px 10px;
+    padding: 40px 30px;
   }
 
   &__header {
@@ -44,25 +47,27 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    // text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px black;
 
     h1 {
       margin-bottom: 0;
       font-size: 1.8em;
       font-weight: bold;
       font-style: italic;
+      letter-spacing: 3px;
 
     }
 
     p {
       font-size: 1em;
       font-style: italic;
+      letter-spacing: 1px;
     }
 
     .underline {
       height: 1px;
-      width: 105px;
-      background-color: rgb(243, 197, 243);
+      width: 145px;
+      background-color: rgb(224, 187, 224);
       margin-bottom: 20px;
       border-radius: 15px;
     }

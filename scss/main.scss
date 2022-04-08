@@ -1,6 +1,6 @@
-@use '../scss/colors'as *;
-@import '_reset';
-@import '_components';
+@use 'colors';
+@use '_reset';
+@use '_components';
 
 html {
     font-size: 62.5%;
@@ -33,7 +33,7 @@ nav {
         font-style: oblique;
 
         span {
-            color: $fontBrandColor;
+            color: colors.$fontBrandColor;
             // e9c3eb
         }
     }
@@ -44,11 +44,11 @@ nav {
         z-index: 1;
 
         &:hover {
-            color: $fontBrandColor;
+            color: colors.$fontBrandColor;
         }
 
         &:focus {
-            color: $fontBrandColor;
+            color: colors.$fontBrandColor;
         }
     }
 
@@ -65,13 +65,13 @@ nav {
 
 
     .active {
-        color: $fontBrandColor;
+        color: colors.$fontBrandColor;
     }
 
     .fa-bars {
         font-size: 25px;
         padding: 5px;
-        color: $fontMainColor;
+        color: colors.$fontMainColor;
     }
 
 }
@@ -85,11 +85,11 @@ nav {
     align-items: center;
     background-image: url(../img/couple-4615557_1920.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center left 54%;
     background-attachment: fixed;
     z-index: 0;
     transition: background-size 5s;
-    color: $fontMainColor;
+    color: colors.$fontMainColor;
 
     &__shadow-bg {
         position: absolute;
@@ -132,14 +132,11 @@ nav {
 //aboutme
 
 .aboutme {
-    // background-color: aliceblue;
-    position: relative;
     background-image: url(../img/wedding-5156639_1920_about.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
     text-shadow: 0 0 2px black;
     z-index: 0;
 
@@ -147,7 +144,7 @@ nav {
         position: absolute;
         height: 100%;
         width: 100%;
-        background-color: rgba(15, 31, 17, 0.712);
+        background-color: rgba(8, 17, 9, 0.685);
         z-index: -1;
     }
 
@@ -157,7 +154,7 @@ nav {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-
+        // padding-left: 15px;
     }
 
     &__photo {
@@ -173,7 +170,7 @@ nav {
     }
 
     &__textParagraph {
-        padding: 10px 25px;
+        // padding: 0px 25px;
         margin-bottom: 20px;
         font-size: .7em;
 
@@ -201,8 +198,7 @@ nav {
 
 
 .offer {
-
-    height: 100vh;
+    width: 100%;
     background-image: url(../img/stone-2929205_1280.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -213,52 +209,33 @@ nav {
         position: absolute;
         height: 100%;
         width: 100%;
-        background-color: rgba(203, 182, 201, 0.452);
+        background-color: rgba(76, 69, 76, 0.349);
         z-index: -1;
     }
 
-    &__description {
-        height: 500px;
-        // width: 100%;
-        background-image: url(../img/beach-1094040_1280.jpg);
-        background-size: 130%;
-        // background-size: cover;
-        background-attachment: fixed;
-        background-position: left 0% top 100%;
-        background-repeat: no-repeat;
+    .container {
+        padding: 40px 0;
+        max-width: 1000px;
     }
 
-    &__info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+
+    &__cards {}
+
+    &__card {
+        margin-bottom: 35px;
+        padding: 10px;
+        height: 200px;
+        background-image: url(../img/wedding-rings-1284225_640.jpg);
+        background-size: cover;
+        background-position: center;
+        // background-position: left 20% top 40%;
+
     }
-}
-
-
-
-
-.offer {
-
-    .card-img-top {
-        transition: .3s transform;
-        transform-origin: bottom;
-    }
-
-    .card {
-        box-shadow: -2px 2px 7px 0px rgba(26, 26, 26, 0.671);
-        overflow: hidden;
-
-        &:hover>.card-img-top {
-            transform: scale(1.15);
-        }
-    }
-
 
 
     &__btn {
         margin-top: 30px;
-        padding: 5px;
+        padding: 10px;
         width: 250px;
         display: block;
         border: none;
@@ -267,12 +244,67 @@ nav {
         text-transform: uppercase;
         color: white;
         transition: .3s color, .3s background-color;
-        background-color: #bb3864;
+        // background-color: #bb3864;
+        background-color: #a76f80;
 
         &:hover {
             cursor: pointer;
-            color: rgb(7, 7, 7);
-            background-color: #f3acc4;
+            color: rgb(51, 38, 50);
+            background-color: #bb3864;
+        }
+
+    }
+}
+
+
+//realizations
+
+
+.realizations {
+    width: 100%;
+    background-image: url(../img/stone-2929205_1280.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+
+    &__shadow-bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(43, 38, 43, 0.116);
+        z-index: -1;
+    }
+
+    .container {
+        padding: 40px 0;
+        max-width: 1000px;
+    }
+
+.carousel{
+    box-shadow: -5px 3px 17px 0px black;
+}
+
+
+    &__btn {
+        margin-top: 30px;
+        padding: 10px;
+        width: 200px;
+        display: block;
+        border: none;
+        text-align: center;
+        border-radius: 10px;
+        text-transform: uppercase;
+        color: rgb(0, 0, 0);
+        font-size: .8em;
+        letter-spacing: 2px;
+        transition: .3s color, .3s background-color;
+        box-shadow: -1px 1px 8px 0px black;
+
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #d395a688;
         }
 
     }
@@ -282,12 +314,18 @@ nav {
 //footer
 footer {
     display: flex;
+    padding: 5px 0;
+    // height: 50px;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 100%;
-    background-color: #ece6e6;
     text-align: center;
+    font-size: 0.8em;
+    border-top: 1px solid #2e2a2f2e;
+    background-color: rgb(178 173 179 / 58%);
+    p{
+        margin: 0;
+    }
 }
 
 
@@ -334,6 +372,18 @@ footer {
     .aboutme {
         background-position: 10% 60%;
         z-index: 0;
+
+
+
+        &__text {
+            padding-left: 15px;
+        }
+    }
+
+    .offer {
+        .container {
+            padding: 40px 20px;
+        }
     }
 
 }
