@@ -148,8 +148,8 @@ nav .nav-link:focus {
   color: #f7cdd0;
 }
 nav .brand {
-  height: 108px;
-  width: 150px;
+  height: 75px;
+  width: 120px;
   background-image: url(../img/logo_mini.png);
   background-size: contain;
   background-position: center;
@@ -348,6 +348,12 @@ nav .fa-bars {
 .realizations .carousel {
   -webkit-box-shadow: -5px 3px 17px 0px black;
           box-shadow: -5px 3px 17px 0px black;
+}
+.realizations .carousel .carousel-control-next-icon,
+.realizations .carousel .carousel-control-prev-icon {
+  background-color: rgba(0, 0, 0, 0.631372549);
+  height: 4rem;
+  width: 4rem;
 }
 .realizations__btn {
   margin-top: 30px;
