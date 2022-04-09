@@ -323,10 +323,12 @@ nav .fa-bars {
   background-color: rgba(255, 255, 255, 0.39);
 }
 .offer__text {
+  padding-right: 0;
   min-height: 40vh;
   font-size: 0.8em;
   padding-left: -40px;
-  padding-right: 0;
+  -webkit-box-shadow: -5px 3px 17px 0px black;
+          box-shadow: -5px 3px 17px 0px black;
 }
 .offer .row {
   margin: auto;

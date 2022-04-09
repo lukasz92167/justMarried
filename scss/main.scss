@@ -224,10 +224,11 @@ nav {
     }
 
     &__text {
+        padding-right: 0;
         min-height: 40vh;
         font-size: 0.8em;
         padding-left: -40px;
-        padding-right: 0;
+        box-shadow: -5px 3px 17px 0px black;
     }
 
     .row {
