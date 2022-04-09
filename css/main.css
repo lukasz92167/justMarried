@@ -54,7 +54,12 @@ a:visited {
 .section {
   position: relative;
   min-height: 50vh;
-  color: white;
+  color: rgb(255, 255, 255);
+  padding: 40px 30px;
+}
+.section .container {
+  padding: 0;
+  max-width: 1100px;
 }
 .section__content {
   position: relative;
@@ -67,7 +72,6 @@ a:visited {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 40px 30px;
 }
 .section__header {
   width: 100%;
@@ -86,7 +90,6 @@ a:visited {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  text-shadow: 1px 1px 1px black;
 }
 .section__header h1 {
   margin-bottom: 0;
@@ -103,9 +106,18 @@ a:visited {
 .section__header .underline {
   height: 1px;
   width: 145px;
-  background-color: rgb(224, 187, 224);
+  background-color: rgb(177, 140, 177);
   margin-bottom: 20px;
   border-radius: 15px;
+}
+
+.shadow-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 
 html {
@@ -121,9 +133,9 @@ body {
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 3px 14px 1px rgba(0, 0, 0, 0.7);
-          box-shadow: 0px 3px 14px 1px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+          box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
   z-index: 1;
   text-shadow: 2px 2px 5px black;
 }
@@ -186,11 +198,7 @@ nav .fa-bars {
   color: #f1f1f1;
 }
 .header__shadow-bg {
-  position: absolute;
-  height: 100%;
-  width: 100%;
   background-color: rgba(59, 51, 51, 0.411);
-  z-index: -1;
 }
 .header__text {
   padding: 0 10px;
@@ -226,11 +234,7 @@ nav .fa-bars {
   z-index: 0;
 }
 .aboutme__shadow-bg {
-  position: absolute;
-  height: 100%;
-  width: 100%;
   background-color: rgba(8, 17, 9, 0.685);
-  z-index: -1;
 }
 .aboutme__text {
   display: -webkit-box;
@@ -286,44 +290,137 @@ nav .fa-bars {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
+  color: #000000;
+  text-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-shadow: inset 1px 1px 6px 0px black;
+          box-shadow: inset 1px 1px 6px 0px black;
+}
+.offer .section__header {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .offer__shadow-bg {
-  position: absolute;
-  height: 100%;
+  background-color: rgba(29, 26, 29, 0.185);
+}
+.offer__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.39);
+}
+.offer__text {
+  min-height: 40vh;
+  font-size: 0.8em;
+  padding-left: -40px;
+  padding-right: 0;
+}
+.offer .row {
+  margin: auto;
+}
+.offer__services {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 0.85em;
+  color: #000000;
+  border-right: 1px solid rgb(114, 110, 110);
+}
+.offer__service {
+  position: relative;
+  padding: 5px;
+  margin-bottom: 10px;
   width: 100%;
-  background-color: rgba(76, 69, 76, 0.349);
-  z-index: -1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
 }
-.offer .container {
-  padding: 40px 0;
-  max-width: 1000px;
+.offer__service:first-child {
+  margin-top: 10px;
 }
-.offer__card {
-  margin-bottom: 35px;
-  padding: 10px;
-  height: 200px;
-  background-image: url(../img/wedding-rings-1284225_640.jpg);
-  background-size: cover;
-  background-position: center;
+.offer__service::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) scaleX(0);
+          transform: translateX(-50%) scaleX(0);
+  height: 1px;
+  width: 40%;
+  background-color: rgb(177, 140, 177);
+  -webkit-transition: 0.4s -webkit-transform;
+  transition: 0.4s -webkit-transform;
+  transition: 0.4s transform;
+  transition: 0.4s transform, 0.4s -webkit-transform;
 }
-.offer__btn {
+.offer__service:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.offer__service:hover::after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+          transform: translateX(-50%) scaleX(1);
+}
+.offer__description {
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 0.9em;
+}
+.offer a.offer__btn {
   margin-top: 30px;
   padding: 10px;
-  width: 250px;
+  width: 200px;
   display: block;
   border: none;
   text-align: center;
   border-radius: 5px;
   text-transform: uppercase;
-  color: white;
+  color: rgb(0, 0, 0);
+  font-size: 0.8em;
+  letter-spacing: 2px;
   -webkit-transition: 0.3s color, 0.3s background-color;
   transition: 0.3s color, 0.3s background-color;
-  background-color: #a76f80;
+  -webkit-box-shadow: -1px 1px 8px 0px black;
+          box-shadow: -1px 1px 8px 0px black;
 }
-.offer__btn:hover {
+.offer a.offer__btn:hover {
   cursor: pointer;
-  color: rgb(51, 38, 50);
-  background-color: #bb3864;
+  color: white;
+  background-color: rgba(211, 149, 166, 0.5333333333);
 }
 
 .realizations {
@@ -332,14 +429,14 @@ nav .fa-bars {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #000000;
   z-index: 0;
+  border-top: 1px solid #000;
+  -webkit-box-shadow: inset 1px 1px 6px 0px black;
+          box-shadow: inset 1px 1px 6px 0px black;
 }
 .realizations__shadow-bg {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(43, 38, 43, 0.116);
-  z-index: -1;
+  background-color: rgba(29, 26, 29, 0.185);
 }
 .realizations .container {
   padding: 40px 0;
@@ -355,14 +452,14 @@ nav .fa-bars {
   height: 4rem;
   width: 4rem;
 }
-.realizations__btn {
+.realizations a.realizations__btn {
   margin-top: 30px;
   padding: 10px;
   width: 200px;
   display: block;
   border: none;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   text-transform: uppercase;
   color: rgb(0, 0, 0);
   font-size: 0.8em;
@@ -372,7 +469,7 @@ nav .fa-bars {
   -webkit-box-shadow: -1px 1px 8px 0px black;
           box-shadow: -1px 1px 8px 0px black;
 }
-.realizations__btn:hover {
+.realizations a.realizations__btn:hover {
   cursor: pointer;
   color: white;
   background-color: rgba(211, 149, 166, 0.5333333333);

@@ -20,8 +20,8 @@ body {
 //NAVIGATION
 
 nav {
-    background-color: rgba($color: #000000, $alpha: .5);
-    box-shadow: 0px 3px 14px 1px rgba($color: #000000, $alpha: .7);
+    background-color: rgba($color: #000000, $alpha: .6);
+    box-shadow: 0px 2px 12px 0px rgba($color: #000000, $alpha: .9);
     z-index: 1;
     text-shadow: 2px 2px 5px black;
 
@@ -77,6 +77,7 @@ nav {
 }
 
 
+
 .header {
     position: relative;
     height: 100vh;
@@ -92,11 +93,7 @@ nav {
     color: colors.$fontMainColor;
 
     &__shadow-bg {
-        position: absolute;
-        height: 100%;
-        width: 100%;
         background-color: rgba(59, 51, 51, 0.411);
-        z-index: -1;
     }
 
     &__text {
@@ -141,11 +138,7 @@ nav {
     z-index: 0;
 
     &__shadow-bg {
-        position: absolute;
-        height: 100%;
-        width: 100%;
         background-color: rgba(8, 17, 9, 0.685);
-        z-index: -1;
     }
 
     &__text {
@@ -204,53 +197,121 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
+    color: #000000;
+    text-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: inset 1px 1px 6px 0px black;
+
+    .section__header {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
     &__shadow-bg {
-        position: absolute;
-        height: 100%;
+        background-color: rgba(29, 26, 29, 0.185);
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        // justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+        color: #000000;
+        background-color: rgba(255, 255, 255, 0.39);
+    }
+
+    &__text {
+        min-height: 40vh;
+        font-size: 0.8em;
+        padding-left: -40px;
+        padding-right: 0;
+    }
+
+    .row {
+        margin: auto;
+    }
+
+    &__services {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.85em;
+        color: #000000;
+        border-right: 1px solid rgb(114, 110, 110);
+    }
+
+    &__service {
+        position: relative;
+        padding: 5px;
+        margin-bottom: 10px;
         width: 100%;
-        background-color: rgba(76, 69, 76, 0.349);
-        z-index: -1;
+        text-transform: uppercase;
+        text-align: center;
+        color: #000000;
+
+        &:first-child {
+            margin-top: 10px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            height: 1px;
+            width: 40%;
+            background-color: rgb(177 140 177);
+            transition: .4s transform;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: #000000;
+
+            // background-color: red;
+            &::after {
+                transform: translateX(-50%) scaleX(1)
+            }
+        }
+
     }
 
-    .container {
-        padding: 40px 0;
-        max-width: 1000px;
+    &__description {
+        // min-height: 50vh;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.9em;
     }
 
-
-    &__cards {}
-
-    &__card {
-        margin-bottom: 35px;
-        padding: 10px;
-        height: 200px;
-        background-image: url(../img/wedding-rings-1284225_640.jpg);
-        background-size: cover;
-        background-position: center;
-        // background-position: left 20% top 40%;
-
-    }
-
-
-    &__btn {
+    a.offer__btn {
         margin-top: 30px;
         padding: 10px;
-        width: 250px;
+        width: 200px;
         display: block;
         border: none;
         text-align: center;
         border-radius: 5px;
         text-transform: uppercase;
-        color: white;
+        color: rgb(0, 0, 0);
+        font-size: .8em;
+        letter-spacing: 2px;
         transition: .3s color, .3s background-color;
-        // background-color: #bb3864;
-        background-color: #a76f80;
+        box-shadow: -1px 1px 8px 0px black;
 
         &:hover {
             cursor: pointer;
-            color: rgb(51, 38, 50);
-            background-color: #bb3864;
+            color: white;
+            background-color: #d395a688;
         }
 
     }
@@ -266,14 +327,13 @@ nav {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    color: #000000;
     z-index: 0;
+    border-top: 1px solid #000;
+    box-shadow: inset 1px 1px 6px 0px black;
 
     &__shadow-bg {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(43, 38, 43, 0.116);
-        z-index: -1;
+        background-color: rgba(29, 26, 29, 0.185);
     }
 
     .container {
@@ -294,14 +354,14 @@ nav {
     }
 
 
-    &__btn {
+    a.realizations__btn {
         margin-top: 30px;
         padding: 10px;
         width: 200px;
         display: block;
         border: none;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 5px;
         text-transform: uppercase;
         color: rgb(0, 0, 0);
         font-size: .8em;
