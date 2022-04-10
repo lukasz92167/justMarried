@@ -213,6 +213,7 @@ nav {
     }
 
     &__text {
+        min-height: 40vh;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -220,15 +221,9 @@ nav {
         justify-content: space-around;
         align-items: center;
         color: #000000;
-        background-color: rgba(255, 255, 255, 0.39);
-    }
-
-    &__text {
-        padding-right: 0;
-        min-height: 40vh;
-        font-size: 0.8em;
-        padding-left: -40px;
-        box-shadow: -5px 3px 17px 0px black;
+        background-color: rgba(255, 255, 255, 0.342);
+        // box-shadow: -5px 3px 17px 0px black;
+        font-size: 0.7em;
     }
 
     .row {
@@ -249,7 +244,7 @@ nav {
 
     &__service {
         position: relative;
-        padding: 5px;
+        padding: 5px 7px;
         margin-bottom: 10px;
         width: 100%;
         text-transform: uppercase;
@@ -258,6 +253,7 @@ nav {
 
         &:first-child {
             margin-top: 10px;
+            font-weight: bold;
         }
 
         &::after {
@@ -286,12 +282,19 @@ nav {
 
     &__description {
         // min-height: 50vh;
-        padding: 0 10px;
+        padding: 20px 10px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         font-size: 0.9em;
+
+        h2 {
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
     }
 
     a.offer__btn {
@@ -338,8 +341,7 @@ nav {
     }
 
     .container {
-        padding: 40px 0;
-        max-width: 1000px;
+        max-width: 1140px;
     }
 
     .carousel {
@@ -415,21 +417,49 @@ footer {
     }
 }
 
+
+@media (min-width:576px) {
+    .section {
+        font-size: 1.1em;
+    }
+
+    .offer {
+        .container {
+            max-width: 800px;
+        }
+
+        &__text {
+            font-size: .85em;
+        }
+
+        &__services {
+            font-size: 0.85em;
+        }
+    }
+}
+
+
 @media (min-width:744px) {
     .header {
         &__text {
             padding: 0 90px;
         }
     }
-}
 
+    .offer {
+        .container {
+            max-width: 800px;
+        }
 
-@media (min-width:576px) {
-    .section {
-        font-size: 1.1em;
+        &__text {
+            font-size: .85em;
+        }
+
+        &__services {
+            font-size: 0.85em;
+        }
     }
 }
-
 
 
 @media (min-width:992px) {
@@ -452,7 +482,15 @@ footer {
 
     .offer {
         .container {
-            padding: 40px 20px;
+            max-width: 90%;
+        }
+
+        &__text {
+            font-size: .9em;
+        }
+
+        &__services {
+            font-size: 0.9em;
         }
     }
 
@@ -462,6 +500,12 @@ footer {
     .aboutme {
         &__textParagraph {
             font-size: .8em;
+        }
+    }
+
+    .offer {
+        .container {
+            max-width: 1140px;
         }
     }
 
