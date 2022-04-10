@@ -355,10 +355,6 @@ nav .fa-bars {
   text-align: center;
   color: #000000;
 }
-.offer__service:first-child {
-  margin-top: 10px;
-  font-weight: bold;
-}
 .offer__service::after {
   content: "";
   position: absolute;
@@ -374,9 +370,18 @@ nav .fa-bars {
   transition: 0.4s transform;
   transition: 0.4s transform, 0.4s -webkit-transform;
 }
+.offer__service:first-child {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.offer__service:first-child::after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+          transform: translateX(-50%) scaleX(1);
+}
 .offer__service:hover {
   cursor: pointer;
   color: #000000;
+  font-weight: bold;
 }
 .offer__service:hover::after {
   -webkit-transform: translateX(-50%) scaleX(1);

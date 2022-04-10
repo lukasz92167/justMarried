@@ -251,10 +251,6 @@ nav {
         text-align: center;
         color: #000000;
 
-        &:first-child {
-            margin-top: 10px;
-            font-weight: bold;
-        }
 
         &::after {
             content: "";
@@ -268,9 +264,19 @@ nav {
             transition: .4s transform;
         }
 
+        &:first-child {
+            margin-top: 10px;
+            font-weight: bold;
+
+            &::after {
+                transform: translateX(-50%) scaleX(1);
+            }
+        }
+
         &:hover {
             cursor: pointer;
             color: #000000;
+            font-weight: bold;
 
             // background-color: red;
             &::after {
