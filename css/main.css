@@ -30,27 +30,10 @@ a:visited {
           animation: slide-bottom 1s ease-out infinite alternate both;
 }
 
-@-webkit-keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(15px);
-            transform: translateY(15px);
-  }
+.show {
+  opacity: 1;
 }
 
-@keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(15px);
-            transform: translateY(15px);
-  }
-}
 .section {
   position: relative;
   min-height: 50vh;
@@ -62,6 +45,8 @@ a:visited {
 }
 .section__content {
   position: relative;
+}
+.section__content--flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,6 +59,8 @@ a:visited {
 }
 .section__header {
   width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,6 +104,29 @@ a:visited {
   height: 100%;
   width: 100%;
   z-index: -1;
+}
+
+.section__btn {
+  margin-top: 30px;
+  padding: 10px;
+  width: 200px;
+  display: block;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s color, 0.3s background-color;
+  transition: 0.3s color, 0.3s background-color;
+  -webkit-box-shadow: -1px 1px 8px 0px black;
+          box-shadow: -1px 1px 8px 0px black;
+}
+.section__btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgba(211, 149, 166, 0.5333333333);
 }
 
 html {
@@ -296,10 +306,6 @@ nav .fa-bars {
   -webkit-box-shadow: inset 1px 1px 6px 0px black;
           box-shadow: inset 1px 1px 6px 0px black;
 }
-.offer .section__header {
-  padding-left: 30px;
-  padding-right: 30px;
-}
 .offer__shadow-bg {
   background-color: rgba(29, 26, 29, 0.185);
 }
@@ -322,9 +328,6 @@ nav .fa-bars {
   color: #000000;
   background-color: rgba(255, 255, 255, 0.342);
   font-size: 0.7em;
-}
-.offer .row {
-  margin: auto;
 }
 .offer__services {
   padding: 0;
@@ -355,6 +358,9 @@ nav .fa-bars {
   text-align: center;
   color: #000000;
 }
+.offer__service:first-child {
+  margin-top: 10px;
+}
 .offer__service::after {
   content: "";
   position: absolute;
@@ -370,11 +376,10 @@ nav .fa-bars {
   transition: 0.4s transform;
   transition: 0.4s transform, 0.4s -webkit-transform;
 }
-.offer__service:first-child {
-  margin-top: 10px;
+.offer__service--active {
   font-weight: bold;
 }
-.offer__service:first-child::after {
+.offer__service--active::after {
   -webkit-transform: translateX(-50%) scaleX(1);
           transform: translateX(-50%) scaleX(1);
 }
@@ -383,12 +388,8 @@ nav .fa-bars {
   color: #000000;
   font-weight: bold;
 }
-.offer__service:hover::after {
-  -webkit-transform: translateX(-50%) scaleX(1);
-          transform: translateX(-50%) scaleX(1);
-}
-.offer__description {
-  padding: 20px 10px;
+.offer__descriptions {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,32 +406,31 @@ nav .fa-bars {
   text-align: center;
   font-size: 0.9em;
 }
-.offer__description h2 {
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  font-size: 1.2em;
+.offer__description {
+  position: absolute;
+  height: 100%;
+  padding: 20px 20px;
+  opacity: 0;
+  -webkit-transition: 0.6s opacity;
+  transition: 0.6s opacity;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.offer a.offer__btn {
-  margin-top: 30px;
-  padding: 10px;
-  width: 200px;
-  display: block;
-  border: none;
-  text-align: center;
-  border-radius: 5px;
-  text-transform: uppercase;
-  color: rgb(0, 0, 0);
-  font-size: 0.8em;
-  letter-spacing: 2px;
-  -webkit-transition: 0.3s color, 0.3s background-color;
-  transition: 0.3s color, 0.3s background-color;
-  -webkit-box-shadow: -1px 1px 8px 0px black;
-          box-shadow: -1px 1px 8px 0px black;
-}
-.offer a.offer__btn:hover {
-  cursor: pointer;
-  color: white;
-  background-color: rgba(211, 149, 166, 0.5333333333);
+.offer__description--active {
+  opacity: 1;
+  z-index: 2;
 }
 
 .realizations {
@@ -441,7 +441,7 @@ nav .fa-bars {
   background-size: cover;
   color: #000000;
   z-index: 0;
-  border-top: 1px solid #000;
+  border-top: 2px solid #434343;
   -webkit-box-shadow: inset 1px 1px 6px 0px black;
           box-shadow: inset 1px 1px 6px 0px black;
 }
@@ -460,28 +460,6 @@ nav .fa-bars {
   background-color: rgba(0, 0, 0, 0.631372549);
   height: 4rem;
   width: 4rem;
-}
-.realizations a.realizations__btn {
-  margin-top: 30px;
-  padding: 10px;
-  width: 200px;
-  display: block;
-  border: none;
-  text-align: center;
-  border-radius: 5px;
-  text-transform: uppercase;
-  color: rgb(0, 0, 0);
-  font-size: 0.8em;
-  letter-spacing: 2px;
-  -webkit-transition: 0.3s color, 0.3s background-color;
-  transition: 0.3s color, 0.3s background-color;
-  -webkit-box-shadow: -1px 1px 8px 0px black;
-          box-shadow: -1px 1px 8px 0px black;
-}
-.realizations a.realizations__btn:hover {
-  cursor: pointer;
-  color: white;
-  background-color: rgba(211, 149, 166, 0.5333333333);
 }
 
 footer {
@@ -537,6 +515,7 @@ footer p {
 
   .offer .container {
     max-width: 800px;
+    min-height: 30vh;
   }
   .offer__text {
     font-size: 0.85em;
@@ -563,6 +542,7 @@ footer p {
   }
   .offer__text {
     font-size: 0.9em;
+    min-height: 30vh;
   }
   .offer__services {
     font-size: 0.9em;
