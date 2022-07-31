@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     serviceList.forEach(service => {
         service.addEventListener("click", () => {
             let activeService = document.querySelector(".offer__service--active")
-            let activeDescription = document.querySelector(".offer__description--active");
+            // let activeDescription = document.querySelector(".offer__description--active");
 
             if (service.dataset.service != activeService) {
                 serviceList.forEach(item => {

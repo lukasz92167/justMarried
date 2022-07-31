@@ -90,9 +90,11 @@ nav {
     z-index: 0;
     transition: background-size 5s;
     color: colors.$fontMainColor;
+    box-shadow: inset 0px 1px 15px 1px black;
 
     &__shadow-bg {
         background-color: rgba(59, 51, 51, 0.411);
+        // box-shadow: inset 1px 1px 6px 0px black;
     }
 
     &__text {
@@ -125,20 +127,18 @@ nav {
     }
 }
 
+
+main {
+    background-image: url(../img/stone-2929205_1280.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 //aboutme
 
 .aboutme {
-    background-image: url(../img/wedding-5156639_1920_about.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-shadow: 0 0 2px black;
-    z-index: 0;
 
-    &__shadow-bg {
-        background-color: rgba(8, 17, 9, 0.685);
-    }
 
     &__text {
         // padding: 0px 15px;
@@ -158,26 +158,12 @@ nav {
             width: 100%;
             max-width: 555px;
             border-radius: 10px;
+            box-shadow: -7px 7px 10px 0px rgba(0, 0, 0, 0.397);
         }
     }
 
     &__textParagraph {
-        // padding: 0px 25px;
         margin-bottom: 20px;
-        font-size: .7em;
-
-        h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        p {
-            font-size: 1.2em;
-            text-align: center;
-            padding: 0;
-        }
     }
 
     &__text .aboutme__textParagraph:last-child {
@@ -190,35 +176,19 @@ nav {
 
 
 .offer {
-    width: 100%;
-    background-image: url(../img/stone-2929205_1280.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-    color: #000000;
-    text-shadow: none;
-    padding-left: 0;
-    padding-right: 0;
-    box-shadow: inset 1px 1px 6px 0px black;
 
 
-    &__shadow-bg {
-        background-color: rgba(29, 26, 29, 0.185);
-    }
 
     &__text {
-        min-height: 40vh;
+        width: 100%;
+        // min-height: 25vh;
+        padding: 20px 0;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        // justify-content: center;
-        justify-content: space-around;
+        // flex-wrap: wrap;
+        // // justify-content: space-around;
         align-items: center;
-        color: #000000;
-        background-color: rgba(255, 255, 255, 0.342);
-        // box-shadow: -5px 3px 17px 0px black;
-        font-size: 0.7em;
+        font-size: .8em;
     }
 
 
@@ -229,41 +199,47 @@ nav {
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-size: 0.85em;
-        color: #000000;
+        font-size: 0.8em;
         border-right: 1px solid rgb(114, 110, 110);
     }
 
     &__service {
         position: relative;
         padding: 5px 7px;
-        margin-bottom: 10px;
         width: 100%;
         text-transform: uppercase;
-        text-align: center;
+        text-align: start;
         color: #000000;
+        border: 1px solid transparent;
+        background-color: transparent;
+        transition: .6s background-color;
+        overflow: hidden;
 
         &:first-child {
-            margin-top: 10px;
+            // margin-top: 7px;
         }
 
         &::after {
             content: "";
             position: absolute;
-            bottom: 3px;
-            left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            height: 1px;
-            width: 40%;
+            bottom: 1px;
+            left: 7px;
+            transform: scaleX(0);
+            transform-origin: left;
+            height: 3px;
+            border-radius: 50px;
+            width: calc(100% - 7px);
             background-color: rgb(177 140 177);
-            transition: .4s transform;
+            transition: .6s transform;
+
         }
 
         &--active {
             font-weight: bold;
+            background-color: rgba(211, 149, 165, 0.205);
 
             &::after {
-                transform: translateX(-50%) scaleX(1);
+                transform: scaleX(1);
             }
         }
 
@@ -276,42 +252,39 @@ nav {
     }
 
     &__descriptions {
+        height: 44vh;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        font-size: 0.9em;
+        overflow: hidden;
+        // font-size: .8em;
     }
 
 
     &__description {
-        // display: none;
         position: absolute;
-        height: 100%;
-        padding: 20px 20px;
+        padding: 10px 10px;
         opacity: 0;
-        transition: .6s opacity;
+        transition: .8s opacity;
         z-index: -1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // display: none;
-        // cursor: default;
-        // top: 50%;
-        // opacity: 0;
-        // transition: opacity .9s;
+        text-align: center;
+        color: transparent;
 
-        // &:hover {
-        //     opacity: 1;
-        // }
 
         &--active {
-            // display: contents;
             opacity: 1;
             z-index: 2;
+            color: #000000;
+
+            p {
+                margin-bottom: 3px;
+            }
         }
 
     }
@@ -324,25 +297,13 @@ nav {
 
 .realizations {
     width: 100%;
-    background-image: url(../img/stone-2929205_1280.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #000000;
-    z-index: 0;
-    border-top: 2px solid #434343;
-    box-shadow: inset 1px 1px 6px 0px black;
-
-    &__shadow-bg {
-        background-color: rgba(29, 26, 29, 0.185);
-    }
 
     .container {
-        max-width: 1140px;
+        // max-width: 1140px;
     }
 
     .carousel {
-        box-shadow: -5px 3px 17px 0px black;
+        box-shadow: -7px 7px 10px 0px rgba(0, 0, 0, 0.397);
 
         .carousel-control-next-icon,
         .carousel-control-prev-icon {
@@ -353,6 +314,64 @@ nav {
     }
 }
 
+.contact_us {
+
+    &__form {
+        padding: 20px 20px;
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+
+        .form__question {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+
+
+            .form_input_text {
+                padding: 5px 5px;
+                width: 100%;
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid rgb(163, 161, 161);
+                border-radius: 3px;
+                // text-align: center;
+                background-color: rgba(0, 0, 0, 0.048);
+                transition: .5s border-bottom, .5s background-color;
+
+                &:focus {
+                    outline: none;
+                    border-bottom: 2px solid rgb(187, 135, 187);
+                    background-color: rgba(0, 0, 0, 0.088);
+
+                    &~label {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            &--long {
+                // width: 100%;
+
+                .form_input_text {
+                    padding: 10px;
+                    width: 100%;
+                    // height: 150px;
+                    max-height: 450px;
+                    text-align: start;
+                    // background-color: rgba(0, 0, 0, 0.123);
+
+                }
+            }
+        }
+    }
+}
 
 //footer
 footer {
@@ -373,12 +392,16 @@ footer {
 }
 
 
+
+
+
 @media (min-width:405px) {
     .header {
         &__text {
             padding: 0 12%;
         }
     }
+
 }
 
 @media (min-width:483px) {
@@ -392,20 +415,19 @@ footer {
 
 @media (min-width:576px) {
     .section {
-        font-size: 1.1em;
+        // font-size: 1.1em;
     }
 
+
     .offer {
-        .container {
-            max-width: 800px;
-        }
 
         &__text {
-            font-size: .85em;
+            // min-height: 35vh;
+            // font-size: .75em;
         }
 
         &__services {
-            font-size: 0.85em;
+            // font-size: 0.95em;
         }
     }
 }
@@ -419,17 +441,14 @@ footer {
     }
 
     .offer {
-        .container {
-            max-width: 800px;
-            min-height: 30vh;
-        }
 
         &__text {
-            font-size: .85em;
+            // font-size: .85em;
+            // min-height: 30vh;
         }
 
         &__services {
-            font-size: 0.85em;
+            // font-size: 0.95em;
         }
 
     }
@@ -444,28 +463,26 @@ footer {
     }
 
     .aboutme {
-        background-position: 10% 60%;
-        z-index: 0;
-
-
 
         &__text {
             padding-left: 15px;
         }
+
+        &__photo {
+            justify-content: left;
+        }
     }
 
     .offer {
-        .container {
-            max-width: 90%;
-        }
 
         &__text {
-            font-size: .9em;
-            min-height: 30vh;
+            // font-size: 1.2em;
+            min-height: 25vh;
+            // min-height: 30vh;
         }
 
         &__services {
-            font-size: 0.9em;
+            // font-size: .9em;
         }
     }
 
@@ -474,13 +491,15 @@ footer {
 @media (min-width:1200px) {
     .aboutme {
         &__textParagraph {
-            font-size: .8em;
+            // font-size: .8em;
         }
     }
 
     .offer {
-        .container {
-            max-width: 1140px;
+
+        &__text {
+            min-height: 30vh;
+            // min-height: 30vh;
         }
     }
 

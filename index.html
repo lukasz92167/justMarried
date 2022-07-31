@@ -39,7 +39,7 @@
           </a>
           <a class="nav-link" href="#section1">opinie</a>
           <a class="nav-link" href="#section1">Blog</a>
-          <a class="nav-link" href="#section1">kontakt</a>
+          <a class="nav-link" href="#contact_us">kontakt</a>
         </div>
         </ul>
       </div>
@@ -56,9 +56,10 @@
     <a class="fa-solid fa-angles-down slide-bottom" href="#aboutme"></a>
   </header>
   <main>
-    <section class="aboutme section" id="aboutme">
-      <div class="shadow-bg aboutme__shadow-bg"></div>
-      <div class="container">
+    <!-- <div class="pasek"></div> -->
+    <section class="aboutme section section--tile" id="aboutme">
+      <div class="shadow-bg shadow-bg"></div>
+      <div class="container-md">
         <div class="section__header">
           <h1>O mnie</h1>
           <div class="underline"></div>
@@ -114,10 +115,10 @@
     </section>
 
 
-    <section id="offer" class="offer section">
-      <div class="shadow-bg offer__shadow-bg"></div>
+    <section class="offer section section--tile" id="offer">
+      <div class="shadow-bg"></div>
 
-      <div class="container">
+      <div class="wrapper container-md">
         <div class="section__header">
           <h1>Oferta</h1>
           <div class="underline"></div>
@@ -128,10 +129,10 @@
         </div>
         <div class="section__content">
 
-          <div class="offer__text">
-            <div class="offer__services col-4 col-md-3 col-lg-4 px-md-4">
+          <div class="offer__text bgc-light">
+            <div class="offer__services col-4">
 
-              <a class="offer__service" data-service="1">kompleksowa organizacja ślubu</a>
+              <a class="offer__service offer__service--active" data-service="1">kompleksowa organizacja ślubu</a>
               <a class="offer__service" data-service="2">częściowa organizacja ślubu</a>
               <a class="offer__service" data-service="3">koordynacja dnia ślubu</a>
               <a class="offer__service" data-service="4">ślub w plenerze</a>
@@ -139,12 +140,12 @@
 
 
             </div>
-            <div class="offer__descriptions col-8 col-md-9 col-lg-8">
+            <div class="offer__descriptions col-8">
               <!-- 
               <div class="offer__description--show">
               </div> -->
 
-              <div class="offer__description">
+              <div class="offer__description offer__description--active">
                 <p>
                   Wspólnie z Wami kompleksowo zaplanuję i zorganizuję Wasz Dzień.
                   Z waszych wyobrażeń i marzeń uszyję na miarę niepowtarzalny ślub. Jestem z wami już od
@@ -206,15 +207,16 @@
             </div>
 
           </div>
-          <a href="#" class="section__btn mx-auto">czytaj więcej</a>
         </div>
+        <a href="#" class="section__btn mx-auto">czytaj więcej</a>
       </div>
     </section>
 
 
-    <section id="realizations" class="realizations section">
-      <div class="shadow-bg realizations__shadow-bg"></div>
-      <div class="container">
+    <section id="realizations" class="realizations section section--tile">
+      <div class="shadow-bg"></div>
+
+      <div class="container-md">
         <div class="section__header">
           <h1>Nasze realizacje</h1>
           <div class="underline"></div>
@@ -265,11 +267,61 @@
           </div>
 
 
-          <a href="#" class="section__btn mx-auto">zobacz galerie</a>
+        </div>
+        <a href="#" class="section__btn mx-auto">zobacz galerie</a>
+      </div>
+    </section>
+    <section id="contact_us" class="contact_us section section--tile">
+      <div class="shadow-bg"></div>
+      <div class="container-md">
+        <div class="section__header">
+          <h1>Kontakt</h1>
+          <div class="underline"></div>
+          <p>
+            Masz pytania? Skontaktuj się ze mną
+          </p>
+        </div>
+        <div class="section__content">
+          <form action="" class="contact_us__form bgc-light" id="form--contact_us" method="get">
+
+            <div class="form__question">
+              <input type="text" name="name" class="form_input_text" autocomplete="off">
+              <label for="name">Imię:</label>
+            </div>
+
+            <div class="form__question">
+              <input type="tel" name="phone" pattern="[0-9]{9}" class="form_input_text" autocomplete="off">
+              <label for="phone">Nr kontaktowy</label>
+            </div>
+
+            <div class="form__question">
+              <input type="date" name="date" class="form_input_text" value="">
+              <label for="date">Data wydarzenia</label>
+            </div>
+
+            <div class="form__question">
+              <input type="text" name="guests" class="form_input_text" autocomplete="off">
+              <label for="guests">Liczba gości</label>
+            </div>
+
+
+            <div class="form__question form__question--long">
+              <textarea name="comment" id="comment" cols="30" rows="5" class="form_input_text"
+                form="form--contact_us"></textarea>
+              <label for="comment"></label>
+            </div>
+
+            <div class="form__question">
+              <input type="submit" class="section__btn mx-auto">
+            </div>
+          </form>
+
         </div>
 
-    </section>
 
+      </div>
+
+    </section>
 
   </main>
 
